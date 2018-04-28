@@ -1,0 +1,214 @@
+<xml>
+    <!-- turn on office ceiling lamp -->
+    <iq xmlns="jabber:client" to="mrha@busch-jaeger.de/rpc" type="set" id="1479545274402">
+        <query xmlns="jabber:iq:rpc">
+            <methodCall>
+                <methodName>RemoteInterface.setDatapoint</methodName>
+                <params>
+                    <param>
+                        <value>
+                            <string>ABB700C6DF1E/ch0006/idp0000</string>
+                        </value>
+                    </param>
+                    <param>
+                        <value>
+                            <string>1</string>
+                        </value>
+                    </param>
+                </params>
+            </methodCall>
+        </query>
+    </iq>
+    <iq xmlns="jabber:client" to="mrha@busch-jaeger.de/rpc" type="set" id="1479545274402">
+        <query xmlns="jabber:iq:rpc">
+            <methodCall>
+                <methodName>RemoteInterface.setDatapoint</methodName>
+                <params>
+                    <param>
+                        <value>
+                            <string>ABB700C6DF1E/ch0006/idp0000</string>
+                        </value>
+                    </param>
+                    <param>
+                        <value>
+                            <string>1</string>
+                        </value>
+                    </param>
+                </params>
+            </methodCall>
+        </query>
+    </iq>
+    <!-- result -->
+    <iq type='result' to='installer@busch-jaeger.de/e496b2' from='mrha@busch-jaeger.de/rpc' id='1479545274402'
+        xmlns='jabber:client'>
+        <query xmlns='jabber:iq:rpc'>
+            <methodResponse>
+                <params>
+                    <param>
+                        <value>
+                            <boolean>1</boolean>
+                        </value>
+                    </param>
+                </params>
+            </methodResponse>
+        </query>
+    </iq>
+    <message xmlns='jabber:client' type='headline' to='installer@busch-jaeger.de/e496b2' from='mrha@busch-jaeger.de'>
+        <event xmlns='http://jabber.org/protocol/pubsub#event'>
+            <items node='http://abb.com/protocol/update'>
+                <item id='1'>
+                    <update xmlns='http://abb.com/protocol/update'>
+                        <data>&lt;?xml version=&quot;1.0&quot;?&gt;&lt;project timeStamp=&quot;227966&quot; sessionId=&quot;571ddf32&quot;
+                            type=&quot;update&quot; mrhaVersion=&quot;2.0.4&quot; mrhaBuild=&quot;3429&quot;&gt;&lt;devices&gt;&lt;device
+                            serialNumber=&quot;ABB700C6DF1E&quot; domainAddress=&quot;CFCC&quot; state=&quot;modified&quot;
+                            commissioningState=&quot;ready&quot;&gt;&lt;channels&gt;&lt;channel state=&quot;modified&quot;
+                            i=&quot;ch0000&quot; cid=&quot;ABB70084&quot;&gt;&lt;inputs&gt;&lt;dataPoint state=&quot;modified&quot;
+                            i=&quot;idp0000&quot;&gt;&lt;value&gt;1&lt;/value&gt;&lt;/dataPoint&gt;&lt;/inputs&gt;&lt;outputs/&gt;&lt;parameters/&gt;&lt;scenes/&gt;&lt;/channel&gt;&lt;channel
+                            state=&quot;modified&quot; i=&quot;ch0006&quot; cid=&quot;ABB70262&quot;&gt;&lt;inputs&gt;&lt;dataPoint
+                            state=&quot;modified&quot; i=&quot;idp0000&quot; full=&quot;false&quot;&gt;&lt;value&gt;1&lt;/value&gt;&lt;/dataPoint&gt;&lt;/inputs&gt;&lt;outputs&gt;&lt;dataPoint
+                            state=&quot;modified&quot; i=&quot;odp0000&quot; full=&quot;true&quot;&gt;&lt;value&gt;1&lt;/value&gt;&lt;/dataPoint&gt;&lt;/outputs&gt;&lt;parameters/&gt;&lt;scenes/&gt;&lt;/channel&gt;&lt;/channels&gt;&lt;parameters/&gt;&lt;/device&gt;&lt;/devices&gt;&lt;/project&gt;</data>
+                    </update>
+                </item>
+            </items>
+        </event>
+    </message>
+    <iq type='result' to='installer@busch-jaeger.de/e496b2' from='mrha@busch-jaeger.de/rpc' id='1479545274405'
+        xmlns='jabber:client'>
+        <query xmlns='jabber:iq:rpc'>
+            <methodResponse>
+                <params>
+                    <param>
+                        <value>
+                            <boolean>1</boolean>
+                        </value>
+                    </param>
+                </params>
+            </methodResponse>
+        </query>
+    </iq>
+    <message xmlns='jabber:client' type='headline' to='installer@busch-jaeger.de/e496b2' from='mrha@busch-jaeger.de'>
+        <event xmlns='http://jabber.org/protocol/pubsub#event'>
+            <items node='http://abb.com/protocol/update'>
+                <item id='1'>
+                    <update xmlns='http://abb.com/protocol/update'>
+                        <data>&lt;?xml version=&quot;1.0&quot;?&gt;&lt;project timeStamp=&quot;227967&quot; sessionId=&quot;571ddf32&quot;
+                            type=&quot;update&quot; mrhaVersion=&quot;2.0.4&quot; mrhaBuild=&quot;3429&quot;&gt;&lt;devices&gt;&lt;device
+                            serialNumber=&quot;ABB700C6DF1E&quot; domainAddress=&quot;CFCC&quot; state=&quot;modified&quot;
+                            commissioningState=&quot;ready&quot;&gt;&lt;channels&gt;&lt;channel state=&quot;modified&quot;
+                            i=&quot;ch0006&quot; cid=&quot;ABB70262&quot;&gt;&lt;inputs/&gt;&lt;outputs&gt;&lt;dataPoint
+                            state=&quot;modified&quot; i=&quot;odp0001&quot; full=&quot;true&quot;&gt;&lt;value&gt;28&lt;/value&gt;&lt;/dataPoint&gt;&lt;/outputs&gt;&lt;parameters/&gt;&lt;scenes/&gt;&lt;/channel&gt;&lt;/channels&gt;&lt;parameters/&gt;&lt;/device&gt;&lt;/devices&gt;&lt;/project&gt;</data>
+                    </update>
+                </item>
+            </items>
+        </event>
+    </message>
+    <message xmlns='jabber:client' type='headline' to='installer@busch-jaeger.de/e496b2' from='mrha@busch-jaeger.de'>
+        <event xmlns='http://jabber.org/protocol/pubsub#event'>
+            <items node='http://abb.com/protocol/update'>
+                <item id='1'>
+                    <update xmlns='http://abb.com/protocol/update'>
+                        <data>&lt;?xml version=&quot;1.0&quot;?&gt;&lt;project timeStamp=&quot;227968&quot; sessionId=&quot;571ddf32&quot;
+                            type=&quot;update&quot; mrhaVersion=&quot;2.0.4&quot; mrhaBuild=&quot;3429&quot;&gt;&lt;devices&gt;&lt;device
+                            serialNumber=&quot;ABB65463DA29&quot; domainAddress=&quot;CFCC&quot; state=&quot;modified&quot;
+                            commissioningState=&quot;ready&quot;&gt;&lt;channels/&gt;&lt;/device&gt;&lt;device
+                            serialNumber=&quot;ABB700000000&quot; domainAddress=&quot;CFCC&quot; state=&quot;modified&quot;
+                            commissioningState=&quot;ready&quot;&gt;&lt;channels/&gt;&lt;/device&gt;&lt;/devices&gt;&lt;/project&gt;</data>
+                    </update>
+                </item>
+            </items>
+        </event>
+    </message>
+
+
+    <!-- turn off office ceiling lamp -->
+    <iq xmlns="jabber:client" to="mrha@busch-jaeger.de/rpc" type="set" id="1479545463490">
+        <query xmlns="jabber:iq:rpc">
+            <methodCall>
+                <methodName>RemoteInterface.setDatapoint</methodName>
+                <params>
+                    <param>
+                        <value>
+                            <string>ABB700C6DF1E/ch0006/idp0000</string>
+                        </value>
+                    </param>
+                    <param>
+                        <value>
+                            <string>0</string>
+                        </value>
+                    </param>
+                </params>
+            </methodCall>
+        </query>
+    </iq>
+    <!-- result -->
+    <iq type='result' to='installer@busch-jaeger.de/e496b2' from='mrha@busch-jaeger.de/rpc' id='1479545463490'
+        xmlns='jabber:client'>
+        <query xmlns='jabber:iq:rpc'>
+            <methodResponse>
+                <params>
+                    <param>
+                        <value>
+                            <boolean>1</boolean>
+                        </value>
+                    </param>
+                </params>
+            </methodResponse>
+        </query>
+    </iq>
+    <message xmlns='jabber:client' type='headline' to='installer@busch-jaeger.de/e496b2' from='mrha@busch-jaeger.de'>
+        <event xmlns='http://jabber.org/protocol/pubsub#event'>
+            <items node='http://abb.com/protocol/update'>
+                <item id='1'>
+                    <update xmlns='http://abb.com/protocol/update'>
+                        <data>&lt;?xml version=&quot;1.0&quot;?&gt;&lt;project timeStamp=&quot;227983&quot; sessionId=&quot;571ddf32&quot;
+                            type=&quot;update&quot; mrhaVersion=&quot;2.0.4&quot; mrhaBuild=&quot;3429&quot;&gt;&lt;devices&gt;&lt;device
+                            serialNumber=&quot;ABB700C6DF1E&quot; domainAddress=&quot;CFCC&quot; state=&quot;modified&quot;
+                            commissioningState=&quot;ready&quot;&gt;&lt;channels&gt;&lt;channel state=&quot;modified&quot;
+                            i=&quot;ch0000&quot; cid=&quot;ABB70084&quot;&gt;&lt;inputs&gt;&lt;dataPoint state=&quot;modified&quot;
+                            i=&quot;idp0000&quot;&gt;&lt;value&gt;0&lt;/value&gt;&lt;/dataPoint&gt;&lt;/inputs&gt;&lt;outputs/&gt;&lt;parameters/&gt;&lt;scenes/&gt;&lt;/channel&gt;&lt;channel
+                            state=&quot;modified&quot; i=&quot;ch0006&quot; cid=&quot;ABB70262&quot;&gt;&lt;inputs&gt;&lt;dataPoint
+                            state=&quot;modified&quot; i=&quot;idp0000&quot; full=&quot;false&quot;&gt;&lt;value&gt;0&lt;/value&gt;&lt;/dataPoint&gt;&lt;/inputs&gt;&lt;outputs&gt;&lt;dataPoint
+                            state=&quot;modified&quot; i=&quot;odp0000&quot; full=&quot;true&quot;&gt;&lt;value&gt;0&lt;/value&gt;&lt;/dataPoint&gt;&lt;/outputs&gt;&lt;parameters/&gt;&lt;scenes/&gt;&lt;/channel&gt;&lt;/channels&gt;&lt;parameters/&gt;&lt;/device&gt;&lt;/devices&gt;&lt;/project&gt;</data>
+                    </update>
+                </item>
+            </items>
+        </event>
+    </message>
+    <message xmlns='jabber:client' type='headline' to='installer@busch-jaeger.de/e496b2' from='mrha@busch-jaeger.de'>
+        <event xmlns='http://jabber.org/protocol/pubsub#event'>
+            <items node='http://abb.com/protocol/update'>
+                <item id='1'>
+                    <update xmlns='http://abb.com/protocol/update'>
+                        <data>&lt;?xml version=&quot;1.0&quot;?&gt;&lt;project timeStamp=&quot;227984&quot; sessionId=&quot;571ddf32&quot;
+                            type=&quot;update&quot; mrhaVersion=&quot;2.0.4&quot; mrhaBuild=&quot;3429&quot;&gt;&lt;devices&gt;&lt;device
+                            serialNumber=&quot;ABB700C6DF1E&quot; domainAddress=&quot;CFCC&quot; state=&quot;modified&quot;
+                            commissioningState=&quot;ready&quot;&gt;&lt;channels&gt;&lt;channel state=&quot;modified&quot;
+                            i=&quot;ch0006&quot; cid=&quot;ABB70262&quot;&gt;&lt;inputs/&gt;&lt;outputs&gt;&lt;dataPoint
+                            state=&quot;modified&quot; i=&quot;odp0001&quot; full=&quot;true&quot;&gt;&lt;value&gt;0&lt;/value&gt;&lt;/dataPoint&gt;&lt;/outputs&gt;&lt;parameters/&gt;&lt;scenes/&gt;&lt;/channel&gt;&lt;/channels&gt;&lt;parameters/&gt;&lt;/device&gt;&lt;/devices&gt;&lt;/project&gt;</data>
+                    </update>
+                </item>
+            </items>
+        </event>
+    </message>
+
+    <!-- generic update -->
+    <message xmlns='jabber:client' type='headline' to='installer@busch-jaeger.de/e496b2' from='mrha@busch-jaeger.de'>
+        <event xmlns='http://jabber.org/protocol/pubsub#event'>
+            <items node='http://abb.com/protocol/update'>
+                <item id='1'>
+                    <update xmlns='http://abb.com/protocol/update'>
+                        <data>&lt;?xml version=&quot;1.0&quot;?&gt;&lt;project timeStamp=&quot;228030&quot; sessionId=&quot;571ddf32&quot;
+                            type=&quot;update&quot; mrhaVersion=&quot;2.0.4&quot; mrhaBuild=&quot;3429&quot;&gt;&lt;devices&gt;&lt;device
+                            serialNumber=&quot;ABB700C92AB0&quot; domainAddress=&quot;CFCC&quot; state=&quot;modified&quot;
+                            commissioningState=&quot;ready&quot;&gt;&lt;channels&gt;&lt;channel state=&quot;modified&quot;
+                            i=&quot;ch0000&quot; cid=&quot;ABB702E2&quot;&gt;&lt;inputs/&gt;&lt;outputs&gt;&lt;dataPoint
+                            state=&quot;modified&quot; i=&quot;odp0010&quot; full=&quot;true&quot;&gt;&lt;value&gt;17.63&lt;/value&gt;&lt;/dataPoint&gt;&lt;/outputs&gt;&lt;parameters/&gt;&lt;scenes/&gt;&lt;/channel&gt;&lt;/channels&gt;&lt;/device&gt;&lt;/devices&gt;&lt;/project&gt;
+                        </data>
+                    </update>
+                </item>
+            </items>
+        </event>
+    </message>
+
+
+</xml>

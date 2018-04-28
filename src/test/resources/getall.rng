@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <element name="project">
+            <attribute name="mrhaBuild">
+                <data type="integer"/>
+            </attribute>
+            <attribute name="mrhaVersion">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <attribute name="sessionId">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <attribute name="time">
+                <data type="integer"/>
+            </attribute>
+            <attribute name="timeStamp">
+                <data type="integer"/>
+            </attribute>
+            <attribute name="type">
+                <data type="NCName"/>
+            </attribute>
+            <element name="sysap">
+                <oneOrMore>
+                    <choice>
+                        <text/>
+                        <ref name="value"/>
+                    </choice>
+                </oneOrMore>
+            </element>
+            <element name="strings">
+                <oneOrMore>
+                    <element name="string">
+                        <attribute name="nameId">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <text/>
+                    </element>
+                </oneOrMore>
+            </element>
+            <element name="sunRiseTimes">
+                <text/>
+            </element>
+            <element name="sunSetTimes">
+                <text/>
+            </element>
+            <element name="definitions">
+                <element name="icons">
+                    <oneOrMore>
+                        <ref name="icon"/>
+                    </oneOrMore>
+                </element>
+                <ref name="functions"/>
+                <element name="functionGroups">
+                    <oneOrMore>
+                        <element name="functionGroup">
+                            <attribute name="context">
+                                <data type="NCName"/>
+                            </attribute>
+                            <attribute name="iconId">
+                                <data type="NMTOKEN"/>
+                            </attribute>
+                            <attribute name="nameId">
+                                <data type="NMTOKEN"/>
+                            </attribute>
+                            <optional>
+                                <attribute name="noSwitching">
+                                    <data type="boolean"/>
+                                </attribute>
+                            </optional>
+                            <attribute name="type">
+                                <data type="NCName"/>
+                            </attribute>
+                            <oneOrMore>
+                                <ref name="function"/>
+                            </oneOrMore>
+                        </element>
+                    </oneOrMore>
+                </element>
+                <ref name="preconditions"/>
+                <element name="roomPresets">
+                    <oneOrMore>
+                        <ref name="preset"/>
+                    </oneOrMore>
+                </element>
+                <element name="floorPresets">
+                    <oneOrMore>
+                        <ref name="preset"/>
+                    </oneOrMore>
+                </element>
+                <element name="presim">
+                    <oneOrMore>
+                        <ref name="mapping"/>
+                    </oneOrMore>
+                </element>
+                <element name="groups">
+                    <oneOrMore>
+                        <element name="group">
+                            <attribute name="functionId">
+                                <data type="integer"/>
+                            </attribute>
+                            <attribute name="key">
+                                <data type="integer"/>
+                            </attribute>
+                            <attribute name="nameId">
+                                <data type="NMTOKEN"/>
+                            </attribute>
+                            <attribute name="type">
+                                <data type="NCName"/>
+                            </attribute>
+                            <oneOrMore>
+                                <ref name="mapping"/>
+                            </oneOrMore>
+                        </element>
+                    </oneOrMore>
+                </element>
+                <ref name="scenes"/>
+                <element name="errors">
+                    <oneOrMore>
+                        <element name="error">
+                            <optional>
+                                <attribute name="iconId">
+                                    <data type="NMTOKEN"/>
+                                </attribute>
+                            </optional>
+                            <attribute name="nameId">
+                                <data type="NMTOKEN"/>
+                            </attribute>
+                            <attribute name="popup">
+                                <data type="boolean"/>
+                            </attribute>
+                            <ref name="value"/>
+                        </element>
+                    </oneOrMore>
+                </element>
+                <ref name="events"/>
+            </element>
+            <element name="timerPrograms">
+                <attribute name="maxTimerPrograms">
+                    <data type="integer"/>
+                </attribute>
+                <attribute name="maxTimersPerTime">
+                    <data type="integer"/>
+                </attribute>
+                <oneOrMore>
+                    <element name="timerProgram">
+                        <optional>
+                            <attribute name="displayName"/>
+                        </optional>
+                        <attribute name="enabled">
+                            <data type="boolean"/>
+                        </attribute>
+                        <attribute name="type">
+                            <data type="NCName"/>
+                        </attribute>
+                        <attribute name="uid">
+                            <data type="NCName"/>
+                        </attribute>
+                        <attribute name="virtualDeviceId">
+                            <data type="NCName"/>
+                        </attribute>
+                        <attribute name="zombie">
+                            <data type="boolean"/>
+                        </attribute>
+                        <element name="timers">
+                            <zeroOrMore>
+                                <element name="timer">
+                                    <attribute name="earliest">
+                                        <data type="integer"/>
+                                    </attribute>
+                                    <attribute name="earliestEnabled">
+                                        <data type="integer"/>
+                                    </attribute>
+                                    <attribute name="latest">
+                                        <data type="integer"/>
+                                    </attribute>
+                                    <attribute name="latestEnabled">
+                                        <data type="integer"/>
+                                    </attribute>
+                                    <attribute name="mode">
+                                        <data type="integer"/>
+                                    </attribute>
+                                    <attribute name="offset">
+                                        <data type="integer"/>
+                                    </attribute>
+                                    <attribute name="serialNumber"/>
+                                    <attribute name="uid">
+                                        <data type="NCName"/>
+                                    </attribute>
+                                    <attribute name="weekDays">
+                                        <data type="integer"/>
+                                    </attribute>
+                                    <attribute name="zombie">
+                                        <data type="boolean"/>
+                                    </attribute>
+                                    <ref name="dataPoint"/>
+                                </element>
+                            </zeroOrMore>
+                        </element>
+                    </element>
+                </oneOrMore>
+            </element>
+            <element name="backups">
+                <oneOrMore>
+                    <element name="backup">
+                        <attribute name="date">
+                            <data type="integer"/>
+                        </attribute>
+                        <attribute name="i">
+                            <data type="integer"/>
+                        </attribute>
+                        <attribute name="jid"/>
+                        <attribute name="name"/>
+                        <attribute name="path"/>
+                        <attribute name="role">
+                            <data type="NCName"/>
+                        </attribute>
+                        <attribute name="signature">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <attribute name="user"/>
+                        <element name="text">
+                            <empty/>
+                        </element>
+                    </element>
+                </oneOrMore>
+            </element>
+            <element name="floorplan">
+                <oneOrMore>
+                    <element name="floor">
+                        <attribute name="level">
+                            <data type="integer"/>
+                        </attribute>
+                        <attribute name="name"/>
+                        <attribute name="nameId">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <attribute name="type">
+                            <data type="NCName"/>
+                        </attribute>
+                        <attribute name="uid">
+                            <data type="integer"/>
+                        </attribute>
+                        <oneOrMore>
+                            <element name="room">
+                                <optional>
+                                    <attribute name="cutPointX">
+                                        <data type="decimal"/>
+                                    </attribute>
+                                </optional>
+                                <optional>
+                                    <attribute name="cutPointY">
+                                        <data type="decimal"/>
+                                    </attribute>
+                                </optional>
+                                <optional>
+                                    <attribute name="cutPosition">
+                                        <data type="NCName"/>
+                                    </attribute>
+                                </optional>
+                                <attribute name="height">
+                                    <data type="decimal"/>
+                                </attribute>
+                                <attribute name="name"/>
+                                <attribute name="offsetX">
+                                    <data type="decimal"/>
+                                </attribute>
+                                <attribute name="offsetY">
+                                    <data type="decimal"/>
+                                </attribute>
+                                <attribute name="type">
+                                    <data type="NCName"/>
+                                </attribute>
+                                <attribute name="uid">
+                                    <data type="NMTOKEN"/>
+                                </attribute>
+                                <attribute name="width">
+                                    <data type="decimal"/>
+                                </attribute>
+                            </element>
+                        </oneOrMore>
+                    </element>
+                </oneOrMore>
+            </element>
+            <element name="favorites">
+                <empty/>
+            </element>
+            <element name="contacts">
+                <empty/>
+            </element>
+            <element name="logics">
+                <oneOrMore>
+                    <element name="logic">
+                        <attribute name="enabled">
+                            <data type="boolean"/>
+                        </attribute>
+                        <attribute name="i">
+                            <data type="integer"/>
+                        </attribute>
+                        <attribute name="name"/>
+                        <attribute name="virtualDeviceId">
+                            <data type="NCName"/>
+                        </attribute>
+                        <attribute name="zombie">
+                            <data type="boolean"/>
+                        </attribute>
+                        <ref name="preconditions"/>
+                        <ref name="events"/>
+                        <element name="actions">
+                            <element name="action">
+                                <attribute name="channel"/>
+                                <attribute name="delay">
+                                    <data type="integer"/>
+                                </attribute>
+                                <attribute name="i">
+                                    <data type="integer"/>
+                                </attribute>
+                                <attribute name="on">
+                                    <data type="NCName"/>
+                                </attribute>
+                                <attribute name="zombie">
+                                    <data type="boolean"/>
+                                </attribute>
+                                <oneOrMore>
+                                    <ref name="dataPoint"/>
+                                </oneOrMore>
+                            </element>
+                        </element>
+                        <element name="notifications">
+                            <empty/>
+                        </element>
+                    </element>
+                </oneOrMore>
+            </element>
+            <element name="messages">
+                <empty/>
+            </element>
+            <element name="pairings">
+                <oneOrMore>
+                    <element name="pairing">
+                        <attribute name="actuator"/>
+                        <attribute name="sensor"/>
+                    </element>
+                </oneOrMore>
+            </element>
+            <element name="descriptions">
+                <oneOrMore>
+                    <ref name="channel"/>
+                </oneOrMore>
+            </element>
+            <element name="devices">
+                <oneOrMore>
+                    <element name="device">
+                        <optional>
+                            <attribute name="buildNumber">
+                                <data type="NMTOKEN"/>
+                            </attribute>
+                        </optional>
+                        <attribute name="commissioningState">
+                            <data type="NCName"/>
+                        </attribute>
+                        <optional>
+                            <attribute name="compilerVersion">
+                                <data type="NMTOKEN"/>
+                            </attribute>
+                        </optional>
+                        <attribute name="copyId">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <attribute name="deviceId">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <attribute name="domainAddress">
+                            <data type="NCName"/>
+                        </attribute>
+                        <attribute name="functionId">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <attribute name="iconId">
+                            <data type="NCName"/>
+                        </attribute>
+                        <attribute name="nameId">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <attribute name="progress">
+                            <data type="integer"/>
+                        </attribute>
+                        <attribute name="serialNumber">
+                            <data type="NCName"/>
+                        </attribute>
+                        <optional>
+                            <attribute name="shortSerialNumber">
+                                <data type="NCName"/>
+                            </attribute>
+                        </optional>
+                        <attribute name="softwareVersion">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <optional>
+                            <attribute name="sysAp">
+                                <data type="boolean"/>
+                            </attribute>
+                        </optional>
+                        <optional>
+                            <attribute name="type">
+                                <data type="NCName"/>
+                            </attribute>
+                        </optional>
+                        <zeroOrMore>
+                            <ref name="attribute"/>
+                        </zeroOrMore>
+                        <optional>
+                            <element name="channels">
+                                <oneOrMore>
+                                    <ref name="channel"/>
+                                </oneOrMore>
+                            </element>
+                        </optional>
+                        <optional>
+                            <ref name="parameters"/>
+                        </optional>
+                    </element>
+                </oneOrMore>
+            </element>
+        </element>
+    </start>
+    <define name="value">
+        <element name="value">
+            <optional>
+                <attribute name="name">
+                    <data type="NCName"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="pairingId">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <text/>
+        </element>
+    </define>
+    <define name="icon">
+        <element name="icon">
+            <optional>
+                <attribute name="glow">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="group">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="hidden">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <attribute name="iconId">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <optional>
+                <attribute name="nameId">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <text/>
+        </element>
+    </define>
+    <define name="functions">
+        <element name="functions">
+            <oneOrMore>
+                <ref name="function"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="function">
+        <element name="function">
+            <optional>
+                <attribute name="accessLevel">
+                    <data type="NCName"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="actuatorMatchCode">
+                    <data type="integer"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="eglobalActuatorMatchCode">
+                    <data type="integer"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="fixed">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="functionId">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="globalActuatorMatchCode">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="globalSensorMatchCode">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="hidden">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="isDefault">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="name">
+                    <data type="NCName"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="nameId">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="noAction">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="noAutomation">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="noSimulation">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="sensorMatchCode">
+                    <data type="integer"/>
+                </attribute>
+            </optional>
+            <zeroOrMore>
+                <ref name="icon"/>
+            </zeroOrMore>
+            <zeroOrMore>
+                <element name="timerDataPoint">
+                    <optional>
+                        <attribute name="mask">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                    </optional>
+                    <attribute name="pairingId">
+                        <data type="NMTOKEN"/>
+                    </attribute>
+                </element>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="preconditions">
+        <element name="preconditions">
+            <choice>
+                <element name="precondition">
+                    <attribute name="i">
+                        <data type="integer"/>
+                    </attribute>
+                    <attribute name="refId">
+                        <data type="integer"/>
+                    </attribute>
+                    <attribute name="zombie">
+                        <data type="boolean"/>
+                    </attribute>
+                    <oneOrMore>
+                        <ref name="parameter"/>
+                    </oneOrMore>
+                </element>
+                <oneOrMore>
+                    <ref name="template"/>
+                </oneOrMore>
+            </choice>
+        </element>
+    </define>
+    <define name="preset">
+        <element name="preset">
+            <attribute name="nameId">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </element>
+    </define>
+    <define name="mapping">
+        <element name="mapping">
+            <attribute name="pairingId">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <data type="NMTOKEN"/>
+        </element>
+    </define>
+    <define name="scenes">
+        <element name="scenes">
+            <zeroOrMore>
+                <element name="scene">
+                    <optional>
+                        <attribute name="active">
+                            <data type="boolean"/>
+                        </attribute>
+                    </optional>
+                    <optional>
+                        <attribute name="functionId">
+                            <data type="integer"/>
+                        </attribute>
+                    </optional>
+                    <optional>
+                        <attribute name="i">
+                            <data type="NCName"/>
+                        </attribute>
+                    </optional>
+                    <optional>
+                        <attribute name="nameId">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                    </optional>
+                    <optional>
+                        <attribute name="sceneNumber">
+                            <data type="integer"/>
+                        </attribute>
+                    </optional>
+                    <optional>
+                        <attribute name="type">
+                            <data type="NCName"/>
+                        </attribute>
+                    </optional>
+                    <choice>
+                        <zeroOrMore>
+                            <ref name="value"/>
+                        </zeroOrMore>
+                        <zeroOrMore>
+                            <element name="storedDataPoint">
+                                <attribute name="pairingId">
+                                    <data type="NMTOKEN"/>
+                                </attribute>
+                            </element>
+                        </zeroOrMore>
+                    </choice>
+                </element>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="events">
+        <element name="events">
+            <choice>
+                <element name="event">
+                    <attribute name="delay">
+                        <data type="integer"/>
+                    </attribute>
+                    <attribute name="i">
+                        <data type="integer"/>
+                    </attribute>
+                    <attribute name="refId">
+                        <data type="integer"/>
+                    </attribute>
+                    <attribute name="zombie">
+                        <data type="boolean"/>
+                    </attribute>
+                    <oneOrMore>
+                        <ref name="parameter"/>
+                    </oneOrMore>
+                </element>
+                <oneOrMore>
+                    <ref name="template"/>
+                </oneOrMore>
+            </choice>
+        </element>
+    </define>
+    <define name="dataPoint">
+        <element name="dataPoint">
+            <optional>
+                <attribute name="autoConnectFloor">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="autoConnectHouse">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="autoConnectRoom">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="defaultConnection">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="dpt">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="full">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="i">
+                    <data type="NCName"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="matchCode">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="maxConnections">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="nameId">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="pairingId">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="pairingOptional">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="value">
+                    <data type="decimal"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="zombie">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <ref name="value"/>
+            </optional>
+        </element>
+    </define>
+    <define name="channel">
+        <element name="channel">
+            <optional>
+                <attribute name="channelId">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <attribute name="cid">
+                <data type="NCName"/>
+            </attribute>
+            <optional>
+                <attribute name="combined">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="i">
+                    <data type="NCName"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="mask">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="maxConnections">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="maxScenes">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="nameId">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="panel">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="rebootDeviceOnFunctionChange">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="sameLocation">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <zeroOrMore>
+                <ref name="attribute"/>
+            </zeroOrMore>
+            <ref name="functions"/>
+            <optional>
+                <element name="inputs">
+                    <zeroOrMore>
+                        <ref name="dataPoint"/>
+                    </zeroOrMore>
+                </element>
+                <element name="outputs">
+                    <zeroOrMore>
+                        <ref name="dataPoint"/>
+                    </zeroOrMore>
+                </element>
+                <ref name="parameters"/>
+                <ref name="scenes"/>
+            </optional>
+        </element>
+    </define>
+    <define name="attribute">
+        <element name="attribute">
+            <attribute name="name">
+                <data type="NCName"/>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="parameters">
+        <element name="parameters">
+            <zeroOrMore>
+                <ref name="parameter"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="template">
+        <element name="template">
+            <attribute name="iconId">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <attribute name="id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <optional>
+                <attribute name="matchCode">
+                    <data type="integer"/>
+                </attribute>
+            </optional>
+            <attribute name="nameId">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <attribute name="type">
+                <data type="NCName"/>
+            </attribute>
+            <zeroOrMore>
+                <ref name="parameter"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="parameter">
+        <element name="parameter">
+            <optional>
+                <attribute name="accessLevel">
+                    <data type="NCName"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="channelSelector">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="condition">
+                    <data type="NCName"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="deviceChannelSelector">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="dpt">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="functionGroup">
+                    <data type="NCName"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="i">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="interval">
+                    <data type="integer"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="mandatory">
+                    <data type="NCName"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="matchCode">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="maxValue">
+                    <data type="decimal"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="minValue">
+                    <data type="decimal"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="nameId">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="pairingId">
+                    <data type="integer"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="parameterId">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="partnerId">
+                    <data type="integer"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="sync">
+                    <data type="NCName"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="type">
+                    <data type="NCName"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="visible">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="wizardOnly">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="writable">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <oneOrMore>
+                <choice>
+                    <text/>
+                    <ref name="value"/>
+                    <element name="phase">
+                        <optional>
+                            <attribute name="default">
+                                <data type="boolean"/>
+                            </attribute>
+                        </optional>
+                        <attribute name="key">
+                            <data type="integer"/>
+                        </attribute>
+                        <attribute name="nameId">
+                            <data type="NMTOKEN"/>
+                        </attribute>
+                        <attribute name="value">
+                            <data type="integer"/>
+                        </attribute>
+                    </element>
+                    <element name="valueEnum">
+                        <oneOrMore>
+                            <element name="option">
+                                <attribute name="isDefault">
+                                    <data type="boolean"/>
+                                </attribute>
+                                <attribute name="key">
+                                    <data type="integer"/>
+                                </attribute>
+                                <optional>
+                                    <attribute name="mask">
+                                        <data type="NMTOKEN"/>
+                                    </attribute>
+                                </optional>
+                                <attribute name="nameId">
+                                    <data type="NMTOKEN"/>
+                                </attribute>
+                            </element>
+                        </oneOrMore>
+                    </element>
+                    <element name="valueFloat">
+                        <attribute name="defaultValue">
+                            <data type="integer"/>
+                        </attribute>
+                        <attribute name="factor">
+                            <data type="integer"/>
+                        </attribute>
+                        <attribute name="maxValue">
+                            <data type="integer"/>
+                        </attribute>
+                        <attribute name="minValue">
+                            <data type="integer"/>
+                        </attribute>
+                        <attribute name="stepWidth">
+                            <data type="decimal"/>
+                        </attribute>
+                    </element>
+                    <element name="valueUnsigned">
+                        <attribute name="defaultValue">
+                            <data type="integer"/>
+                        </attribute>
+                        <attribute name="factor">
+                            <data type="decimal"/>
+                        </attribute>
+                        <attribute name="maxValue">
+                            <data type="integer"/>
+                        </attribute>
+                        <attribute name="minValue">
+                            <data type="integer"/>
+                        </attribute>
+                        <attribute name="stepWidth">
+                            <data type="integer"/>
+                        </attribute>
+                    </element>
+                </choice>
+            </oneOrMore>
+        </element>
+    </define>
+</grammar>

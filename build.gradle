@@ -1,0 +1,96 @@
+//buildscript {
+//    ext.springBootVersion = '2.0.0.RELEASE'
+//    ext.ktVersion = '1.2.31'
+//
+//    repositories {
+//        mavenCentral()
+//        jcenter()
+//    }
+//
+//    dependencies {
+//        classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
+//    }
+//}
+
+plugins {
+    id 'org.springframework.boot' version '2.0.1.RELEASE'
+    id "io.spring.dependency-management" version "1.0.5.RELEASE"
+    id "org.jetbrains.kotlin.jvm" version "1.2.41"
+    id "org.jetbrains.kotlin.plugin.allopen" version "1.2.41"
+    id 'de.fuerstenau.buildconfig' version '1.1.8'// apply false
+
+}
+apply plugin: 'idea'
+
+//apply plugin: "kotlin-spring"
+//apply plugin: 'org.springframework.boot'
+//apply plugin: 'io.spring.dependency-management'
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+bootJar {
+    baseName = 'free@home'
+    version = '0.0.1-SNAPSHOT'
+}
+
+buildConfig {
+    buildConfigField 'String', 'freeAtHomeUsername', "${System.env.FREEATHOME_USERNAME ?: FREEATHOME_USERNAME}"
+    buildConfigField 'String', 'freeAtHomePassword', "${System.env.FREEATHOME_PASSWORD ?: FREEATHOME_PASSWORD}"
+    buildConfigField 'String', 'nibeUplinkToken', "${System.env.NIBEUPLINK_TOKEN ?: NIBEUPLINK_TOKEN}"
+    buildConfigField 'String', 'nibeSystemId', "${System.env.NIBEUPLINK_SYSTEMID ?: NIBEUPLINK_SYSTEMID}"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url "http://files.basex.org/maven" }
+    maven { url "http://xqj.net.org/maven" }
+    maven { url "http://repo.spring.io/snapshot" }
+    maven { url "http://repo.spring.io/milestone" }
+}
+
+dependencies {
+    def xmppVersion = "0.7.5"
+    compile("rocks.xmpp:xmpp-addr:${xmppVersion}")
+    compile("rocks.xmpp:xmpp-core:${xmppVersion}")
+    compile("rocks.xmpp:xmpp-core-client:${xmppVersion}")
+    compile("rocks.xmpp:xmpp-extensions:${xmppVersion}")
+    compile("rocks.xmpp:xmpp-extensions-client:${xmppVersion}")
+    compile("rocks.xmpp:xmpp-websocket:${xmppVersion}")
+
+    def jacksonVersion = "2.9.4"
+    compile("com.fasterxml.jackson.core:jackson-core:${jacksonVersion}")
+    compile("com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}")
+    compile("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:${jacksonVersion}")
+    compile("com.fasterxml.jackson.module:jackson-module-kotlin:${jacksonVersion}")
+
+    def rxVersion = "2.1.12"
+    compile("io.reactivex.rxjava2:rxjava:${rxVersion}")
+
+    compile("com.squareup.okhttp3:okhttp:3.10.0")
+    compile("com.squareup.okhttp3:logging-interceptor:3.10.0")
+
+    def retrofitVersion = "2.4.0"
+    compile("com.squareup.retrofit2:retrofit:${retrofitVersion}")
+    compile("com.squareup.retrofit2:converter-jackson:${retrofitVersion}")
+    compile("com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}")
+
+    compile("org.basex:basex:7.6")
+    compile("net.xqj:basex-xqj:1.4.0")
+
+    compile("org.springframework.boot:spring-boot-starter")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}

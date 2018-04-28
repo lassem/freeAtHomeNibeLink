@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project timeStamp="513174" sessionId="117af773" type="update" mrhaVersion="2.1.6" mrhaBuild="5966">
+    <privileges/>
+    <devices>
+        <device serialNumber="ABB700C92AB4" domainAddress="CFCC" state="modified" commissioningState="ready"
+                progress="100">
+            <channels>
+                <channel state="modified" i="ch0000" cid="ABB702E7">
+                    <inputs/>
+                    <outputs>
+                        <dataPoint state="modified" i="odp0010" full="false">
+                            <value>18.48</value>
+                        </dataPoint>
+                    </outputs>
+                    <parameters/>
+                    <scenes/>
+                </channel>
+            </channels>
+        </device>
+    </devices>
+</project>
+
